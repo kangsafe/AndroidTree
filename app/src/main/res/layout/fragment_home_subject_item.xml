@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/subimg"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/lucky_fuzi_bg"
+        android:src="@drawable/fuzi_aiguo" />
+
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/lucky_num"
+        android:gravity="center"
+        android:text="1"
+        android:textAlignment="center"
+        android:textColor="@color/luckyred"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/subtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subimg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:text="首页"
+        android:textColor="@color/luckyword"
+        android:textSize="18sp" />
+</RelativeLayout>

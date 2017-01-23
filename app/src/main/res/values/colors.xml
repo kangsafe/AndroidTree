@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="main_blue_light">#3F56B5</color>
+    <color name="main_blue_dark">#30459E</color>
+    <color name="main_black">#000000</color>
+    <color name="main_black_grey">#6D6D6D</color>
+    <color name="white">#ffffff</color>
+    <color name="luckyred">#DE1E2B</color>
+    <color name="luckyred1">#ffB61829</color>
+    <color name="luckyword">#EDCE95</color>
+    <color name="luckybg">#120523</color>
+</resources>
