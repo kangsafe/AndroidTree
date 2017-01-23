@@ -108,7 +108,7 @@ public class LuckyCardAdapter extends PagerAdapter {
      * 改变视角距离, 贴近屏幕
      */
     private void setCameraDistance(View rlCardRoot) {
-        int distance = 10000;
+        int distance = 15000;
         float scale = context.getResources().getDisplayMetrics().density * distance;
         rlCardRoot.setCameraDistance(scale);
     }
