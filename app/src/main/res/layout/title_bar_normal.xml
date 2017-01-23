@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_bar_height"
+    android:layout_alignParentTop="true"
+    android:background="@color/luckybg"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="@dimen/title_bar_padding_top">
+
+    <ImageView
+        android:id="@+id/vback"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:src="@mipmap/icon_back" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:paddingRight="10dp"
+        android:text="福卡榜"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/vtitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:text="我的福卡"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+</RelativeLayout>

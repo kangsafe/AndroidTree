@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+import com.ks.SuperActivity;
 import com.ks.androidtree.GetData;
 import com.ks.androidtree.R;
 import com.smallnew.fucardpager.view.CenterViewPager;
@@ -14,7 +15,7 @@ import com.smallnew.fucardpager.view.ZoomOutPageTransformer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LuckyCardActivity extends AppCompatActivity implements CenterViewPager.OnPageChangeListener {
+public class LuckyCardActivity extends SuperActivity implements CenterViewPager.OnPageChangeListener {
 
     private CenterViewPager viewPager;
     private LuckyCardAdapter mViewAdapter;

@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_lucky_card"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/luckybg"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="com.ks.aliwufu.LuckyCardActivity">
 
+    <include layout="@layout/title_bar_normal" />
+
     <TextView
+        android:id="@+id/vname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/header"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
         android:text="集齐五福，拼手气分2亿"
         android:textColor="@color/luckyword"
         android:textSize="20sp"
@@ -24,6 +28,7 @@
         android:id="@+id/vfront_totalnum"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:layout_below="@+id/vname"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:background="@drawable/top"
@@ -44,14 +49,18 @@
     <com.smallnew.fucardpager.view.CenterViewPager
         android:id="@+id/vpager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vname"
+        android:layout_above="@+id/subjectsview"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="45dp"
         android:layout_weight="1" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/subjectsview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="5dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-</LinearLayout>
+</RelativeLayout>

@@ -20,7 +20,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
         this.mOnItemClickListener = listener;
     }
 
-    private final int[] ids = {R.drawable.fuzi_wufu, R.drawable.fuzi_aiguo,
+    private final int[] ids = {R.drawable.fuzi_wufu, R.drawable.fuzi_wanneng, R.drawable.fuzi_aiguo,
             R.drawable.fuzi_fuqiang, R.drawable.fuzi_hexie, R.drawable.fuzi_youshan, R.drawable.fuzi_jingye};
     public Context mContext;
     public String[] mDatas;
