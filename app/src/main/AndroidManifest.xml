@@ -23,6 +23,9 @@
         <activity android:name="com.ks.aliwufu.RotateCardActivity"></activity>
         <activity android:name="com.ditclear.app.MainActivity"></activity>
         <activity android:name="com.recyclefloat.FloatViewActivity">
+
+        </activity>
+        <activity android:name="com.sch.rfview.example.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
