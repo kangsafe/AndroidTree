@@ -3,6 +3,7 @@
     package="com.ks.androidtree">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -10,22 +11,28 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name="com.ks.aliwufu.LuckyCardActivity"
-            android:theme="@style/LuckyTheme">
-
-        </activity>
+            android:theme="@style/LuckyTheme"></activity>
         <activity
             android:name="com.smallnew.fucardpager.FuPagerActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name="com.cardflip.MainActivity"></activity>
-        <activity android:name="com.ks.aliwufu.RotateCardActivity"></activity>
-        <activity android:name="com.ditclear.app.MainActivity"></activity>
-        <activity android:name="com.recyclefloat.FloatViewActivity">
-
-        </activity>
+            android:screenOrientation="portrait" />
+        <activity android:name="com.cardflip.MainActivity" />
+        <activity android:name="com.ks.aliwufu.RotateCardActivity" />
+        <activity android:name="com.ditclear.app.MainActivity" />
+        <activity android:name="com.recyclefloat.FloatViewActivity"></activity>
         <activity android:name="com.sch.rfview.example.activity.MainActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.actionbar.HideActivity"
+            android:label="@string/title_activity_hide"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

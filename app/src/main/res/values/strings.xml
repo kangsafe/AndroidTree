@@ -9,4 +9,5 @@
         <item>友善福</item>
         <item>敬业福</item>
     </string-array>
+    <string name="title_activity_hide">HideActivity</string>
 </resources>
