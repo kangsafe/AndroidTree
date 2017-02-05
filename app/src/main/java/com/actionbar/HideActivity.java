@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
@@ -162,15 +161,14 @@ public class HideActivity extends AppCompatActivity implements ObservableScrollV
             if (newp <= 0 && newp >= -toolbar.getHeight()) {
                 toolbar.setTranslationY(newp);
 //                vscroll.setTranslationY(vscroll.getTranslationY() - dy);
-                ViewGroup.LayoutParams lp = scrollView.getLayoutParams();
-                lp.height = getScreenHeight() - (int) Math.abs(toolbar.getTranslationY());
-                vscroll.setLayoutParams(lp);
-                vscroll.requestLayout();
+//                ViewGroup.LayoutParams lp = scrollView.getLayoutParams();
+//                lp.height = getScreenHeight() - (int) Math.abs(toolbar.getTranslationY());
+//                vscroll.setLayoutParams(lp);
+//                vscroll.requestLayout();
                 vbottom.setTranslationY(vbottom.getTranslationY() + dy);
-//                toolbar.setVisibility(View.GONE);
             } else {
-//                toolbar.setVisibility(View.VISIBLE);
             }
+
         }
     }
 
