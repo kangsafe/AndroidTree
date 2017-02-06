@@ -7,9 +7,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import com.ks.androidtree.R;
 
@@ -36,11 +38,6 @@ public class HideActivity extends AppCompatActivity implements ObservableScrollV
         vbottom = (LinearLayout) findViewById(R.id.vbottom);
         vscroll = (ObservableScrollView) findViewById(R.id.vscroll);
         vweb.loadUrl("http://m.blog.csdn.net/article/details?id=41410113");
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            vscroll.setOnScrollChangeListener(this);
-//        } else {
-//        vscroll.setOnTouchListener(this);
-//        }
         mBottomTrans = vbottom.getTranslationY();
         vscroll.setScrollViewListener(this);
     }
@@ -51,13 +48,12 @@ public class HideActivity extends AppCompatActivity implements ObservableScrollV
         float translationY = toolbar.getTranslationY();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Log.v(TAG, "Down");
                 mStartY = y;
                 mLastY = mStartY;
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (translationY <= toolbar.getHeight()) {
-                    Log.d(TAG, translationY + "");
+//                    Log.d(TAG, translationY + "");
                 }
 //                float mDeltaY = y - mLastY;
 
@@ -79,7 +75,6 @@ public class HideActivity extends AppCompatActivity implements ObservableScrollV
 //                mLastY = y;
 //                mLastDeltaY = mDeltaY;
 
-                Log.v(TAG, "Move");
                 break;
             case MotionEvent.ACTION_UP:
                 //下滑
@@ -89,9 +84,14 @@ public class HideActivity extends AppCompatActivity implements ObservableScrollV
                     animator.start();
                     animator.setDuration(100);
                     animator.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator.linear));
+                    ViewGroup.LayoutParams params = vscroll.getLayoutParams();
+                    params.height = getScreenHeight() - (int) Math.abs(toolbar.getTranslationY());
+                    Log.i(TAG, params.height + "");
+                    vscroll.setLayoutParams(params);
+                    vscroll.requestLayout();
 //                    toolbar.setVisibility(View.GONE);
 //                    vbottom.setVisibility(View.GONE);
-                    getSupportActionBar().hide();
+//                    getSupportActionBar().hide();
                 } else {
                     toolbar.setVisibility(View.VISIBLE);
                     vbottom.setVisibility(View.VISIBLE);
@@ -154,17 +154,19 @@ public class HideActivity extends AppCompatActivity implements ObservableScrollV
     public void onScrollChanged(ObservableScrollView scrollView, int x, int y, int oldx, int oldy) {
         int dx = x - oldx;
         int dy = y - oldy;
-        Log.d(TAG, dx + "," + dy);
+        Log.d(TAG, dx + "," + dy + "," + toolbar.getBottom());
         if (Math.abs(dy) > Math.abs(dx)) {
 //        toolbar.setTitle(toolbar.getTranslationY() + "," + dy);
             float newp = toolbar.getTranslationY() - dy;
             if (newp <= 0 && newp >= -toolbar.getHeight()) {
                 toolbar.setTranslationY(newp);
 //                vscroll.setTranslationY(vscroll.getTranslationY() - dy);
-//                ViewGroup.LayoutParams lp = scrollView.getLayoutParams();
-//                lp.height = getScreenHeight() - (int) Math.abs(toolbar.getTranslationY());
+                ViewGroup.LayoutParams lp = scrollView.getLayoutParams();
+//                lp.height = lp + Math.abs(toolbar.getBottom());
+//                vscroll.setY(toolbar.getBottom());
 //                vscroll.setLayoutParams(lp);
 //                vscroll.requestLayout();
+                vscroll.setPadding(0, toolbar.getHeight() - (int) Math.abs(toolbar.getTranslationY()), 0, 0);
                 vbottom.setTranslationY(vbottom.getTranslationY() + dy);
             } else {
             }
