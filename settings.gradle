@@ -1,1 +1,1 @@
-include ':app', ':polydemo', ':polygonimageview', ':ScratchCard'
+include ':app', ':polydemo', ':polygonimageview', ':ScratchCard', ':AnimRefreshRecyclerView'
