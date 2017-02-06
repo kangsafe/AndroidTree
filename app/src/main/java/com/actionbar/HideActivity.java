@@ -15,6 +15,8 @@ import android.widget.ScrollView;
 
 import com.ks.androidtree.R;
 
+import java.util.function.ToLongBiFunction;
+
 public class HideActivity extends AppCompatActivity implements ObservableScrollView.ScrollViewListener {
 
     private static final String TAG = "HideActivity";
@@ -160,6 +162,7 @@ public class HideActivity extends AppCompatActivity implements ObservableScrollV
             float newp = toolbar.getTranslationY() - dy;
             if (newp <= 0 && newp >= -toolbar.getHeight()) {
                 toolbar.setTranslationY(newp);
+                toolbar.setRotationX(90 * (newp) / toolbar.getHeight());
 //                vscroll.setTranslationY(vscroll.getTranslationY() - dy);
                 ViewGroup.LayoutParams lp = scrollView.getLayoutParams();
 //                lp.height = lp + Math.abs(toolbar.getBottom());
@@ -168,6 +171,8 @@ public class HideActivity extends AppCompatActivity implements ObservableScrollV
 //                vscroll.requestLayout();
                 vscroll.setPadding(0, toolbar.getHeight() - (int) Math.abs(toolbar.getTranslationY()), 0, 0);
                 vbottom.setTranslationY(vbottom.getTranslationY() + dy);
+                vbottom.setRotationX(90 * (vbottom.getTranslationY() + dy) / vbottom.getHeight());
+//                vbottom.setAlpha(255 * (vbottom.getTranslationY() + dy) / vbottom.getHeight());
             } else {
             }
 
